@@ -3,7 +3,7 @@
     <h2>Companies</h2>
     <ul class="treeview treeview-tree">
       <company-tree
-        *ngFor="let company of companies "
+        *ngFor="let company of companyTree "
         [company]="company"
         [selectedCompany]="selectedCompany"
         [selectCompanyHandler]="selectCompanyHandler">
@@ -23,8 +23,3 @@
     </company-details>
   </div>
 </div>
-<pre>{{companies | json}}</pre>
-
-<pre>{{companyTree | json}}</pre>
-
-<pre>{{selectedCompany | json}}</pre>
