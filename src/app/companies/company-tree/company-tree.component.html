@@ -1,0 +1,19 @@
+<li>
+    <span *ngFor="let i of company.path.split(',')">-</span>    
+    <a href="#" 
+      (click)="selectCompany(company)"
+      [class.active]="company === selectedCompany">
+      {{company.name}} | {{company.volume}}$ | <span *ngIf="company.volume != company.totalVolume">{{company.totalVolume}}$</span>
+    </a>
+    <ul>
+      <company-tree
+        *ngFor="let child of company.children "
+        [company]="child"
+        [selectedCompany]="selectedCompany"
+        [selectCompanyHandler]="selectCompanyHandler">
+      </company-tree>
+    </ul>
+</li>
+
+    
+

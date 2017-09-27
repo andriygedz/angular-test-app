@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-md-5">
+    <h2>Companies</h2>
+    <ul class="treeview treeview-tree">
+      <company-tree
+        *ngFor="let company of companies "
+        [company]="company"
+        [selectedCompany]="selectedCompany"
+        [selectCompanyHandler]="selectCompanyHandler">
+      </company-tree>
+    </ul>
+
+    
+    <button class="btn btn-warning" (click)="createNewCompany()">New</button>
+  </div>
+  <div class="col-md-5 col-md-offset-2">
+    <company-details
+      [company]="selectedCompany"
+      [companies]="companies"
+      [createHandler]="addCompany"
+      [updateHandler]="updateCompany"
+      [deleteHandler]="deleteCompany">
+    </company-details>
+  </div>
+</div>
+<pre>{{companies | json}}</pre>
+
+<pre>{{companyTree | json}}</pre>
+
+<pre>{{selectedCompany | json}}</pre>
